@@ -3908,7 +3908,7 @@
                           "kind": "ElementReference",
                           "name": "panel-9"
                         },
-                        "height": 13,
+                        "height": 19,
                         "width": 24,
                         "x": 0,
                         "y": 0
@@ -3921,10 +3921,10 @@
                           "kind": "ElementReference",
                           "name": "panel-16"
                         },
-                        "height": 11,
+                        "height": 19,
                         "width": 24,
                         "x": 0,
-                        "y": 13
+                        "y": 19
                       }
                     }
                   ]
@@ -3947,7 +3947,7 @@
                           "kind": "ElementReference",
                           "name": "panel-11"
                         },
-                        "height": 13,
+                        "height": 19,
                         "width": 24,
                         "x": 0,
                         "y": 0
@@ -3960,10 +3960,10 @@
                           "kind": "ElementReference",
                           "name": "panel-28"
                         },
-                        "height": 13,
+                        "height": 19,
                         "width": 24,
                         "x": 0,
-                        "y": 13
+                        "y": 19
                       }
                     }
                   ]
@@ -3986,7 +3986,7 @@
                           "kind": "ElementReference",
                           "name": "panel-22"
                         },
-                        "height": 13,
+                        "height": 39,
                         "width": 24,
                         "x": 0,
                         "y": 0
