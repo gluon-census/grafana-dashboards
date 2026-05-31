@@ -3531,44 +3531,6 @@
           }
         }
       },
-      "panel-54": {
-        "kind": "Panel",
-        "spec": {
-          "data": {
-            "kind": "QueryGroup",
-            "spec": {
-              "queries": [],
-              "queryOptions": {},
-              "transformations": []
-            }
-          },
-          "description": "",
-          "id": 54,
-          "links": [],
-          "title": "Per Version",
-          "transparent": true,
-          "vizConfig": {
-            "group": "text",
-            "kind": "VizConfig",
-            "spec": {
-              "fieldConfig": {
-                "defaults": {},
-                "overrides": []
-              },
-              "options": {
-                "code": {
-                  "language": "plaintext",
-                  "showLineNumbers": false,
-                  "showMiniMap": false
-                },
-                "content": "To get an output here you need to configure either the Major Version Variable and or the Version variable.",
-                "mode": "markdown"
-              }
-            },
-            "version": "13.0.1+security-01"
-          }
-        }
-      },
       "panel-9": {
         "kind": "Panel",
         "spec": {
@@ -3983,25 +3945,12 @@
                       "spec": {
                         "element": {
                           "kind": "ElementReference",
-                          "name": "panel-54"
-                        },
-                        "height": 3,
-                        "width": 24,
-                        "x": 0,
-                        "y": 0
-                      }
-                    },
-                    {
-                      "kind": "GridLayoutItem",
-                      "spec": {
-                        "element": {
-                          "kind": "ElementReference",
                           "name": "panel-11"
                         },
                         "height": 13,
                         "width": 24,
                         "x": 0,
-                        "y": 3
+                        "y": 0
                       }
                     },
                     {
@@ -4014,7 +3963,7 @@
                         "height": 13,
                         "width": 24,
                         "x": 0,
-                        "y": 16
+                        "y": 13
                       }
                     }
                   ]
