@@ -2614,7 +2614,7 @@
                 }
               }
             },
-            "version": "12.3.6"
+            "version": "13.0.1+security-01"
           }
         }
       },
@@ -2715,6 +2715,10 @@
                 "overrides": []
               },
               "options": {
+                "annotations": {
+                  "clustering": -1,
+                  "multiLane": false
+                },
                 "legend": {
                   "calcs": [
                     "lastNotNull"
@@ -2732,7 +2736,7 @@
                 }
               }
             },
-            "version": "12.3.6"
+            "version": "13.0.1+security-01"
           }
         }
       },
@@ -2874,7 +2878,7 @@
                 }
               }
             },
-            "version": "12.3.6"
+            "version": "13.0.1+security-01"
           }
         }
       },
@@ -3017,7 +3021,7 @@
                 ]
               }
             },
-            "version": "12.3.6"
+            "version": "13.0.1+security-01"
           }
         }
       },
@@ -3123,6 +3127,10 @@
                 "overrides": []
               },
               "options": {
+                "annotations": {
+                  "clustering": -1,
+                  "multiLane": false
+                },
                 "legend": {
                   "calcs": [
                     "lastNotNull"
@@ -3140,7 +3148,7 @@
                 }
               }
             },
-            "version": "12.3.6"
+            "version": "13.0.1+security-01"
           }
         }
       },
@@ -3498,6 +3506,10 @@
                 "overrides": []
               },
               "options": {
+                "annotations": {
+                  "clustering": -1,
+                  "multiLane": false
+                },
                 "legend": {
                   "calcs": [
                     "lastNotNull"
@@ -3515,7 +3527,7 @@
                 }
               }
             },
-            "version": "12.3.6"
+            "version": "13.0.1+security-01"
           }
         }
       },
@@ -3656,6 +3668,7 @@
                       "kind": "RowsLayoutRow",
                       "spec": {
                         "collapse": false,
+                        "hideHeader": true,
                         "layout": {
                           "kind": "GridLayout",
                           "spec": {
@@ -3794,7 +3807,7 @@
                             ]
                           }
                         },
-                        "title": "New row"
+                        "title": "Global"
                       }
                     }
                   ]
