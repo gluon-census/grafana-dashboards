@@ -154,7 +154,7 @@
                 }
               }
             },
-            "version": "13.0.1+security-01"
+            "version": "13.0.12"
           }
         }
       },
@@ -357,7 +357,7 @@
                 "wideLayout": true
               }
             },
-            "version": "13.0.1+security-01"
+            "version": "13.0.12"
           }
         }
       },
@@ -437,7 +437,7 @@
                 "wideLayout": true
               }
             },
-            "version": "13.0.1+security-01"
+            "version": "13.0.12"
           }
         }
       },
@@ -682,7 +682,7 @@
                 }
               }
             },
-            "version": "13.0.1+security-01"
+            "version": "13.0.12"
           }
         }
       },
@@ -809,7 +809,7 @@
                 }
               }
             },
-            "version": "13.0.1+security-01"
+            "version": "13.0.12"
           }
         }
       },
@@ -1075,7 +1075,7 @@
                 }
               }
             },
-            "version": "13.0.1+security-01"
+            "version": "13.0.12"
           }
         }
       },
@@ -1346,7 +1346,7 @@
                 ]
               }
             },
-            "version": "13.0.1+security-01"
+            "version": "13.0.12"
           }
         }
       },
@@ -1474,7 +1474,7 @@
                 "wideLayout": true
               }
             },
-            "version": "13.0.1+security-01"
+            "version": "13.0.12"
           }
         }
       },
@@ -2086,7 +2086,7 @@
                 "mode": "html"
               }
             },
-            "version": "13.0.1+security-01"
+            "version": "13.0.12"
           }
         }
       },
@@ -3531,6 +3531,240 @@
           }
         }
       },
+      "panel-54": {
+        "kind": "Panel",
+        "spec": {
+          "data": {
+            "kind": "QueryGroup",
+            "spec": {
+              "queries": [
+                {
+                  "kind": "PanelQuery",
+                  "spec": {
+                    "hidden": false,
+                    "query": {
+                      "datasource": {
+                        "name": "P1809F7CD0C75ACF3"
+                      },
+                      "group": "prometheus",
+                      "kind": "DataQuery",
+                      "spec": {
+                        "editorMode": "code",
+                        "exemplar": false,
+                        "expr": "label_join(\n  gluon_domain_total{community=~\"$community\"},\n  \"join_key\", \"/\", \"community\", \"site\", \"domain\"\n)",
+                        "format": "table",
+                        "instant": true,
+                        "legendFormat": "__auto",
+                        "range": false
+                      },
+                      "version": "v0"
+                    },
+                    "refId": "A"
+                  }
+                },
+                {
+                  "kind": "PanelQuery",
+                  "spec": {
+                    "hidden": false,
+                    "query": {
+                      "datasource": {
+                        "name": "P1809F7CD0C75ACF3"
+                      },
+                      "group": "prometheus",
+                      "kind": "DataQuery",
+                      "spec": {
+                        "editorMode": "code",
+                        "exemplar": false,
+                        "expr": "label_join(\n  gluon_domain_total{community=~\"$community\"}\n  /\n  scalar(sum(gluon_domain_total{community=~\"$community\"})),\n  \"join_key\", \"/\", \"community\", \"site\", \"domain\"\n)",
+                        "format": "table",
+                        "instant": true,
+                        "legendFormat": "__auto",
+                        "range": false
+                      },
+                      "version": "v0"
+                    },
+                    "refId": "B"
+                  }
+                }
+              ],
+              "queryOptions": {},
+              "transformations": [
+                {
+                  "group": "joinByField",
+                  "kind": "Transformation",
+                  "spec": {
+                    "filter": {
+                      "id": "byRefId",
+                      "options": ""
+                    },
+                    "options": {
+                      "byField": "join_key",
+                      "mode": "outerTabular"
+                    }
+                  }
+                },
+                {
+                  "group": "sortBy",
+                  "kind": "Transformation",
+                  "spec": {
+                    "options": {
+                      "fields": {},
+                      "sort": [
+                        {
+                          "field": "Value #A"
+                        }
+                      ]
+                    }
+                  }
+                },
+                {
+                  "group": "calculateField",
+                  "kind": "Transformation",
+                  "spec": {
+                    "options": {
+                      "alias": "Cumulative",
+                      "cumulative": {
+                        "field": "Value #B",
+                        "reducer": "sum"
+                      },
+                      "mode": "cumulativeFunctions",
+                      "reduce": {
+                        "reducer": "sum"
+                      }
+                    }
+                  }
+                },
+                {
+                  "group": "filterByValue",
+                  "kind": "Transformation",
+                  "spec": {
+                    "options": {
+                      "filters": [
+                        {
+                          "config": {
+                            "id": "greaterOrEqual",
+                            "options": {
+                              "value": "0.5"
+                            }
+                          },
+                          "fieldName": "Cumulative"
+                        }
+                      ],
+                      "match": "any",
+                      "type": "include"
+                    }
+                  }
+                },
+                {
+                  "group": "limit",
+                  "kind": "Transformation",
+                  "spec": {
+                    "options": {
+                      "limitField": "1"
+                    }
+                  }
+                },
+                {
+                  "group": "organize",
+                  "kind": "Transformation",
+                  "spec": {
+                    "options": {
+                      "excludeByName": {
+                        "Cumulative": true,
+                        "Time 1": true,
+                        "Time 2": true,
+                        "Value #B": true,
+                        "__name__": true,
+                        "community 1": true,
+                        "community 2": true,
+                        "domain 1": true,
+                        "domain 2": true,
+                        "instance 1": true,
+                        "instance 2": true,
+                        "job 1": true,
+                        "job 2": true,
+                        "join_key": true,
+                        "site 1": true,
+                        "site 2": true
+                      },
+                      "includeByName": {},
+                      "indexByName": {
+                        "Cumulative": 16,
+                        "Time 1": 2,
+                        "Time 2": 9,
+                        "Value #A": 0,
+                        "Value #B": 15,
+                        "__name__": 3,
+                        "community 1": 4,
+                        "community 2": 10,
+                        "domain 1": 5,
+                        "domain 2": 11,
+                        "instance 1": 6,
+                        "instance 2": 12,
+                        "job 1": 7,
+                        "job 2": 13,
+                        "join_key": 1,
+                        "site 1": 8,
+                        "site 2": 14
+                      },
+                      "renameByName": {
+                        "Value #A": ""
+                      }
+                    }
+                  }
+                }
+              ]
+            }
+          },
+          "description": "",
+          "id": 54,
+          "links": [],
+          "title": "Median domain size, weighted",
+          "vizConfig": {
+            "group": "stat",
+            "kind": "VizConfig",
+            "spec": {
+              "fieldConfig": {
+                "defaults": {
+                  "color": {
+                    "mode": "palette-classic"
+                  },
+                  "thresholds": {
+                    "mode": "absolute",
+                    "steps": [
+                      {
+                        "color": "green",
+                        "value": 0
+                      },
+                      {
+                        "color": "red",
+                        "value": 80
+                      }
+                    ]
+                  }
+                },
+                "overrides": []
+              },
+              "options": {
+                "colorMode": "value",
+                "graphMode": "area",
+                "justifyMode": "auto",
+                "orientation": "auto",
+                "percentChangeColorMode": "standard",
+                "reduceOptions": {
+                  "calcs": [],
+                  "fields": "/.*/",
+                  "values": true
+                },
+                "showPercentChange": false,
+                "textMode": "auto",
+                "wideLayout": true
+              }
+            },
+            "version": "13.0.12"
+          }
+        }
+      },
       "panel-9": {
         "kind": "Panel",
         "spec": {
@@ -3802,6 +4036,19 @@
                                   "width": 14,
                                   "x": 0,
                                   "y": 27
+                                }
+                              },
+                              {
+                                "kind": "GridLayoutItem",
+                                "spec": {
+                                  "element": {
+                                    "kind": "ElementReference",
+                                    "name": "panel-54"
+                                  },
+                                  "height": 8,
+                                  "width": 12,
+                                  "x": 0,
+                                  "y": 43
                                 }
                               }
                             ]
@@ -4398,6 +4645,23 @@
           "regexApplyTo": "value",
           "skipUrlSync": false,
           "sort": "disabled"
+        }
+      },
+      {
+        "datasource": {
+          "name": "P1809F7CD0C75ACF3"
+        },
+        "group": "prometheus",
+        "kind": "AdhocVariable",
+        "spec": {
+          "allowCustomValue": true,
+          "baseFilters": [],
+          "defaultKeys": [],
+          "enableGroupBy": false,
+          "filters": [],
+          "hide": "dontHide",
+          "name": "Filters",
+          "skipUrlSync": false
         }
       }
     ]
