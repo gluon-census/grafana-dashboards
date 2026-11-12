@@ -3609,6 +3609,30 @@
                     },
                     "refId": "C"
                   }
+                },
+                {
+                  "kind": "PanelQuery",
+                  "spec": {
+                    "hidden": false,
+                    "query": {
+                      "datasource": {
+                        "name": "P1809F7CD0C75ACF3"
+                      },
+                      "group": "prometheus",
+                      "kind": "DataQuery",
+                      "spec": {
+                        "editorMode": "code",
+                        "exemplar": false,
+                        "expr": "max(gluon_domain_total)",
+                        "format": "table",
+                        "instant": true,
+                        "legendFormat": "__auto",
+                        "range": false
+                      },
+                      "version": "v0"
+                    },
+                    "refId": "D"
+                  }
                 }
               ],
               "queryOptions": {},
@@ -3633,7 +3657,7 @@
                   "spec": {
                     "filter": {
                       "id": "byRefId",
-                      "options": "/^(?:C|joinByField-A-B)$/"
+                      "options": "/^(?:joinByField-A-B|C|D)$/"
                     },
                     "options": {
                       "mode": "outerTabular"
@@ -3765,7 +3789,8 @@
                       },
                       "renameByName": {
                         "Value #A": "Median:",
-                        "Value #C": "Average:"
+                        "Value #C": "Average:",
+                        "Value #D": "Max:"
                       }
                     }
                   }
