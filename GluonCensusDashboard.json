@@ -3585,6 +3585,30 @@
                     },
                     "refId": "B"
                   }
+                },
+                {
+                  "kind": "PanelQuery",
+                  "spec": {
+                    "hidden": false,
+                    "query": {
+                      "datasource": {
+                        "name": "P1809F7CD0C75ACF3"
+                      },
+                      "group": "prometheus",
+                      "kind": "DataQuery",
+                      "spec": {
+                        "editorMode": "code",
+                        "exemplar": false,
+                        "expr": "sum(gluon_domain_total{community=~\"$community\"} ^ 2)\n/\nsum(gluon_domain_total{community=~\"$community\"})",
+                        "format": "table",
+                        "instant": true,
+                        "legendFormat": "__auto",
+                        "range": false
+                      },
+                      "version": "v0"
+                    },
+                    "refId": "C"
+                  }
                 }
               ],
               "queryOptions": {},
@@ -3595,11 +3619,43 @@
                   "spec": {
                     "filter": {
                       "id": "byRefId",
-                      "options": ""
+                      "options": "/^(?:A|B)$/"
                     },
                     "options": {
                       "byField": "join_key",
                       "mode": "outerTabular"
+                    }
+                  }
+                },
+                {
+                  "group": "joinByField",
+                  "kind": "Transformation",
+                  "spec": {
+                    "filter": {
+                      "id": "byRefId",
+                      "options": "/^(?:C|joinByField-A-B)$/"
+                    },
+                    "options": {
+                      "mode": "outerTabular"
+                    }
+                  }
+                },
+                {
+                  "group": "filterByValue",
+                  "kind": "Transformation",
+                  "spec": {
+                    "options": {
+                      "filters": [
+                        {
+                          "config": {
+                            "id": "isNotNull",
+                            "options": {}
+                          },
+                          "fieldName": "join_key"
+                        }
+                      ],
+                      "match": "any",
+                      "type": "include"
                     }
                   }
                 },
@@ -3708,7 +3764,8 @@
                         "site 2": 14
                       },
                       "renameByName": {
-                        "Value #A": ""
+                        "Value #A": "Median:",
+                        "Value #C": "Average:"
                       }
                     }
                   }
@@ -3719,7 +3776,7 @@
           "description": "",
           "id": 54,
           "links": [],
-          "title": "Median domain size, weighted",
+          "title": "Domain Size (per node)",
           "vizConfig": {
             "group": "stat",
             "kind": "VizConfig",
@@ -3727,7 +3784,7 @@
               "fieldConfig": {
                 "defaults": {
                   "color": {
-                    "mode": "palette-classic"
+                    "mode": "thresholds"
                   },
                   "thresholds": {
                     "mode": "absolute",
@@ -4461,10 +4518,10 @@
         "1d"
       ],
       "fiscalYearStartMonth": 0,
-      "from": "now-10d",
+      "from": "2026-11-02T02:19:03.606Z",
       "hideTimepicker": false,
       "timezone": "browser",
-      "to": "now"
+      "to": "2026-11-12T02:19:03.606Z"
     },
     "title": "Gluon Census: Dashboard",
     "variables": [
