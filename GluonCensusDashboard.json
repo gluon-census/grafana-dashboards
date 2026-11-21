@@ -154,7 +154,7 @@
                 }
               }
             },
-            "version": "13.0.12"
+            "version": "13.0.13"
           }
         }
       },
@@ -357,7 +357,7 @@
                 "wideLayout": true
               }
             },
-            "version": "13.0.12"
+            "version": "13.0.13"
           }
         }
       },
@@ -437,7 +437,7 @@
                 "wideLayout": true
               }
             },
-            "version": "13.0.12"
+            "version": "13.0.13"
           }
         }
       },
@@ -682,7 +682,7 @@
                 }
               }
             },
-            "version": "13.0.12"
+            "version": "13.0.13"
           }
         }
       },
@@ -809,7 +809,7 @@
                 }
               }
             },
-            "version": "13.0.12"
+            "version": "13.0.13"
           }
         }
       },
@@ -1075,7 +1075,7 @@
                 }
               }
             },
-            "version": "13.0.12"
+            "version": "13.0.13"
           }
         }
       },
@@ -1346,7 +1346,7 @@
                 ]
               }
             },
-            "version": "13.0.12"
+            "version": "13.0.13"
           }
         }
       },
@@ -1474,7 +1474,7 @@
                 "wideLayout": true
               }
             },
-            "version": "13.0.12"
+            "version": "13.0.13"
           }
         }
       },
@@ -2086,7 +2086,7 @@
                 "mode": "html"
               }
             },
-            "version": "13.0.12"
+            "version": "13.0.13"
           }
         }
       },
@@ -3867,7 +3867,7 @@
                 "wideLayout": true
               }
             },
-            "version": "13.0.12"
+            "version": "13.0.13"
           }
         }
       },
@@ -4567,10 +4567,10 @@
         "1d"
       ],
       "fiscalYearStartMonth": 0,
-      "from": "2026-11-02T02:19:03.606Z",
+      "from": "now-10d",
       "hideTimepicker": false,
       "timezone": "browser",
-      "to": "2026-11-12T02:19:03.606Z"
+      "to": "now"
     },
     "title": "Gluon Census: Dashboard",
     "variables": [
